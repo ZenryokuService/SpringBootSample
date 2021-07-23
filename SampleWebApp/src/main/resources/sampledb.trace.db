@@ -1,0 +1,921 @@
+2021-07-11 09:20:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO ([*]CATEBORY_NAME) VALUES('異能バトル漫画')"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "INSERT INTO ([*]CATEBORY_NAME) VALUES('異能バトル漫画')"; expected "identifier"; SQL statement:
+insert into (catebory_name) values('異能バトル漫画') [42001-200]
+2021-07-11 09:20:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "CATEBORY_NAME" が見つかりません
+Column "CATEBORY_NAME" not found; SQL statement:
+insert into category (catebory_name) values('異能バトル漫画') [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-11 09:22:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ハーレム漫画')
+INSERT[*] INTO CATEGORY (CATEGORY_NAME) VALUES('逆ハーレム漫画')"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ハーレム漫画')
+INSERT[*] INTO CATEGORY (CATEGORY_NAME) VALUES('逆ハーレム漫画')"; SQL statement:
+insert into category (category_name) values('ハーレム漫画')
+insert into category (category_name) values('逆ハーレム漫画') [42000-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('音楽漫画);
+insert into category (category_name) values('風刺漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('音楽漫画);
+insert into category (category_name) values('風刺漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('音楽漫画);
+insert into category (category_name) values('風刺漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('パロディ漫画);
+insert into category (category_name) values('サスペンス漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('パロディ漫画);
+insert into category (category_name) values('サスペンス漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('パロディ漫画);
+insert into category (category_name) values('サスペンス漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('探偵漫画);
+insert into category (category_name) values('犯罪漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('探偵漫画);
+insert into category (category_name) values('犯罪漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('探偵漫画);
+insert into category (category_name) values('犯罪漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ハードボイルド漫画);
+insert into category (category_name) values('青春漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ハードボイルド漫画);
+insert into category (category_name) values('青春漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('ハードボイルド漫画);
+insert into category (category_name) values('青春漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ピカレスク・ロマン漫画);
+insert into category (category_name) values('伝記漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ピカレスク・ロマン漫画);
+insert into category (category_name) values('伝記漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('ピカレスク・ロマン漫画);
+insert into category (category_name) values('伝記漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('伝奇漫画);
+insert into category (category_name) values('ダークファンタジー漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('伝奇漫画);
+insert into category (category_name) values('ダークファンタジー漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('伝奇漫画);
+insert into category (category_name) values('ダークファンタジー漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('学習漫画);
+insert into category (category_name) values('実用漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('学習漫画);
+insert into category (category_name) values('実用漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('学習漫画);
+insert into category (category_name) values('実用漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('部活漫画);
+insert into category (category_name) values('スポコン漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('部活漫画);
+insert into category (category_name) values('スポコン漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('部活漫画);
+insert into category (category_name) values('スポコン漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('野球漫画);
+insert into category (category_name) values('サッカー漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('野球漫画);
+insert into category (category_name) values('サッカー漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('野球漫画);
+insert into category (category_name) values('サッカー漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('テニス漫画);
+insert into category (category_name) values('卓球漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('テニス漫画);
+insert into category (category_name) values('卓球漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('テニス漫画);
+insert into category (category_name) values('卓球漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('柔道漫画);
+insert into category (category_name) values('空手漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('柔道漫画);
+insert into category (category_name) values('空手漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('柔道漫画);
+insert into category (category_name) values('空手漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ボクシング漫画);
+insert into category (category_name) values('ゴルフ漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ボクシング漫画);
+insert into category (category_name) values('ゴルフ漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('ボクシング漫画);
+insert into category (category_name) values('ゴルフ漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('剣道漫画);
+insert into category (category_name) values('陸上漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('剣道漫画);
+insert into category (category_name) values('陸上漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('剣道漫画);
+insert into category (category_name) values('陸上漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('水泳漫画);
+insert into category (category_name) values('バレー漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('水泳漫画);
+insert into category (category_name) values('バレー漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('水泳漫画);
+insert into category (category_name) values('バレー漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('バスケット漫画);
+insert into category (category_name) values('釣り漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('バスケット漫画);
+insert into category (category_name) values('釣り漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('バスケット漫画);
+insert into category (category_name) values('釣り漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('プロレス漫画);
+insert into category (category_name) values('格闘技漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('プロレス漫画);
+insert into category (category_name) values('格闘技漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('プロレス漫画);
+insert into category (category_name) values('格闘技漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ダンス漫画);
+insert into category (category_name) values('将棋漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ダンス漫画);
+insert into category (category_name) values('将棋漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('ダンス漫画);
+insert into category (category_name) values('将棋漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('サークル漫画);
+insert into category (category_name) values('マンガ家漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('サークル漫画);
+insert into category (category_name) values('マンガ家漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('サークル漫画);
+insert into category (category_name) values('マンガ家漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('お酒漫画);
+insert into category (category_name) values('料理人漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('お酒漫画);
+insert into category (category_name) values('料理人漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('お酒漫画);
+insert into category (category_name) values('料理人漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('アイドル漫画);
+insert into category (category_name) values('医療漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('アイドル漫画);
+insert into category (category_name) values('医療漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('アイドル漫画);
+insert into category (category_name) values('医療漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('萌え漫画);
+insert into category (category_name) values('エッセイ漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('萌え漫画);
+insert into category (category_name) values('エッセイ漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('萌え漫画);
+insert into category (category_name) values('エッセイ漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('タイムトラベル漫画);
+insert into category (category_name) values('異世界移動漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('タイムトラベル漫画);
+insert into category (category_name) values('異世界移動漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('タイムトラベル漫画);
+insert into category (category_name) values('異世界移動漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('男女逆転漫画);
+insert into category (category_name) values('ヤンキー漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('男女逆転漫画);
+insert into category (category_name) values('ヤンキー漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('男女逆転漫画);
+insert into category (category_name) values('ヤンキー漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('任侠漫画);
+insert into category (category_name) values('鉄道漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('任侠漫画);
+insert into category (category_name) values('鉄道漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('任侠漫画);
+insert into category (category_name) values('鉄道漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('戦国漫画);
+insert into category (category_name) values('幕末漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('戦国漫画);
+insert into category (category_name) values('幕末漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('戦国漫画);
+insert into category (category_name) values('幕末漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('バイク漫画);
+insert into category (category_name) values('クルマ漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('バイク漫画);
+insert into category (category_name) values('クルマ漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('バイク漫画);
+insert into category (category_name) values('クルマ漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('走り屋漫画);
+insert into category (category_name) values('レース漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('走り屋漫画);
+insert into category (category_name) values('レース漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('走り屋漫画);
+insert into category (category_name) values('レース漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('動物漫画);
+insert into category (category_name) values('メイド漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('動物漫画);
+insert into category (category_name) values('メイド漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('動物漫画);
+insert into category (category_name) values('メイド漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('執事漫画);
+insert into category (category_name) values('神社漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('執事漫画);
+insert into category (category_name) values('神社漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('執事漫画);
+insert into category (category_name) values('神社漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('結婚漫画);
+insert into category (category_name) values('結婚生活漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('結婚漫画);
+insert into category (category_name) values('結婚生活漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('結婚漫画);
+insert into category (category_name) values('結婚生活漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('育児漫画);
+insert into category (category_name) values('スペースオペラ漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('育児漫画);
+insert into category (category_name) values('スペースオペラ漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('育児漫画);
+insert into category (category_name) values('スペースオペラ漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('魔法少女漫画);
+insert into category (category_name) values('魔法漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('魔法少女漫画);
+insert into category (category_name) values('魔法漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('魔法少女漫画);
+insert into category (category_name) values('魔法漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('怪盗漫画);
+insert into category (category_name) values('受験漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('怪盗漫画);
+insert into category (category_name) values('受験漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('怪盗漫画);
+insert into category (category_name) values('受験漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('教師漫画);
+insert into category (category_name) values('警察漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('教師漫画);
+insert into category (category_name) values('警察漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('教師漫画);
+insert into category (category_name) values('警察漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('犯罪漫画);
+insert into category (category_name) values('百合漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('犯罪漫画);
+insert into category (category_name) values('百合漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('犯罪漫画);
+insert into category (category_name) values('百合漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('麻雀漫画);
+insert into category (category_name) values('ギャンブル漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('麻雀漫画);
+insert into category (category_name) values('ギャンブル漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('麻雀漫画);
+insert into category (category_name) values('ギャンブル漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('競馬漫画);
+insert into category (category_name) values('パチンコ漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('競馬漫画);
+insert into category (category_name) values('パチンコ漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('競馬漫画);
+insert into category (category_name) values('パチンコ漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('パチスロ漫画);
+insert into category (category_name) values('金融漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('パチスロ漫画);
+insert into category (category_name) values('金融漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('パチスロ漫画);
+insert into category (category_name) values('金融漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ホスト漫画);
+insert into category (category_name) values('ホステス[*]・キャバ嬢漫画)"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('ホスト漫画);
+insert into category (category_name) values('ホステス[*]・キャバ嬢漫画)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('ホスト漫画);
+insert into category (category_name) values('ホステス・キャバ嬢漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('自転車漫画);
+insert into category (category_name) values('オタク漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('自転車漫画);
+insert into category (category_name) values('オタク漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('自転車漫画);
+insert into category (category_name) values('オタク漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('お仕事漫画);
+insert into category (category_name) values('ファッション業界漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('お仕事漫画);
+insert into category (category_name) values('ファッション業界漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('お仕事漫画);
+insert into category (category_name) values('ファッション業界漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('不条理漫画);
+insert into category (category_name) values('変身ヒーロー漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('不条理漫画);
+insert into category (category_name) values('変身ヒーロー漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('不条理漫画);
+insert into category (category_name) values('変身ヒーロー漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('忍者漫画);
+insert into category (category_name) values('妖怪漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('忍者漫画);
+insert into category (category_name) values('妖怪漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('忍者漫画);
+insert into category (category_name) values('妖怪漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('吸血鬼漫画);
+insert into category (category_name) values('ロボット漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('吸血鬼漫画);
+insert into category (category_name) values('ロボット漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('吸血鬼漫画);
+insert into category (category_name) values('ロボット漫画) [42001-200]
+2021-07-11 09:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('神様漫画);
+insert into category (category_name) values('神話漫画[*])"; 期待されるステートメント "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_NAME) VALUES('神様漫画);
+insert into category (category_name) values('神話漫画[*])"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into category (category_name) values('神様漫画);
+insert into category (category_name) values('神話漫画) [42001-200]
+2021-07-11 10:12:07 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:67)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2035)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1398)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1388)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:921)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1398)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1388)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:921)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:934)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.tkm.sample.SampleApp.main(SampleApp.java:9)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 96 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 90 more
+2021-07-11 10:12:08 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:330)
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:184)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateDefaultDdlAutoProvider.getDefaultDdlAuto(HibernateDefaultDdlAutoProvider.java:42)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.lambda$getVendorProperties$1(HibernateJpaConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings.getDdlAuto(HibernateSettings.java:41)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineDdlAuto(HibernateProperties.java:143)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.getAdditionalProperties(HibernateProperties.java:103)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineHibernateProperties(HibernateProperties.java:95)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.getVendorProperties(HibernateJpaConfiguration.java:132)
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.entityManagerFactory(JpaBaseConfiguration.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.tkm.sample.SampleApp.main(SampleApp.java:9)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 72 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 66 more
+2021-07-11 10:12:10 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.tkm.sample.SampleApp.main(SampleApp.java:9)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 73 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/pleiades-2020-03-java-win-64bit-jre_20200322/pleiades/workspace/SampleWebApp/src/main/resources/sampledb.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 67 more
+2021-07-11 10:17:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 9 more
+2021-07-11 10:17:02 database: wrong user or password; user: "SA"
+org.h2.message.DbException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 9 more
+2021-07-11 10:17:04 database: wrong user or password; user: "SA"
+org.h2.message.DbException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: ユーザ名またはパスワードが不正です
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 9 more
+2021-07-11 11:40:20 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ADD IS_FINISHED[*] BOOLEAN"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE ADD IS_FINISHED[*] BOOLEAN"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table add is_finished boolean [42001-200]
+2021-07-11 11:41:05 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ADD ([*]IS_FINISHED BOOLEAN)"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE ADD ([*]IS_FINISHED BOOLEAN)"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table add (is_finished boolean) [42001-200]
+2021-07-11 11:41:22 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ADD MNG_ANM[*]  (IS_FINISHED BOOLEAN)"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE ADD MNG_ANM[*]  (IS_FINISHED BOOLEAN)"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table add mng_anm  (is_finished boolean) [42001-200]
+2021-07-11 11:41:34 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ADD MNG_ANM[*]  IS_FINISHED BOOLEAN"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE ADD MNG_ANM[*]  IS_FINISHED BOOLEAN"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table add mng_anm  is_finished boolean [42001-200]
+2021-07-11 11:42:49 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ADD COLUMN[*] MNG_ANM  IS_FINISHED BOOLEAN"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE ADD COLUMN[*] MNG_ANM  IS_FINISHED BOOLEAN"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table add column mng_anm  is_finished boolean [42001-200]
+2021-07-11 11:46:28 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "RECOMMENED" が見つかりません
+Column "RECOMMENED" not found; SQL statement:
+insert into mng_anm (title, value, category_id, recommened, is_finished) values('うしおととら', 103, '読んだことがある', true) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-11 11:46:44 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列番号が一致しません
+Column count does not match; SQL statement:
+insert into mng_anm (title, value, category_id, recommend, is_finished) values('うしおととら', 103, '読んだことがある', true) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-11 11:53:33 jdbc[146]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "CATEGORIES" が見つかりません
+Table "CATEGORIES" not found; SQL statement:
+--select * from mng_anm;
+select * from categories [42102-200]
+2021-07-11 12:41:41 jdbc[277]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2021-07-11 12:45:46 jdbc[277]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列番号が一致しません
+Column count does not match; SQL statement:
+insert into mng_anm (title, value, category_id, recommend, is_finished) values('キングダム', 61, 105, 'アニメ中', FALSE, TRUE) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-12 15:13:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SELECT * FOM[*] CATEGORY"
+Syntax error in SQL statement "SELECT * FOM[*] CATEGORY"; SQL statement:
+select * fom category [42000-200]
+2021-07-12 15:13:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SELECT * FOM[*] CATEGORY"
+Syntax error in SQL statement "SELECT * FOM[*] CATEGORY"; SQL statement:
+select * fom category [42000-200]
+2021-07-12 15:45:58 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO CATEGORY (CATEGORY_ID, CATEGORY_NAME, DISCRIPTION, IS_PARENT, PARENT_ID) VALUES(アンダーグラウンド[*]・コミックス, '2アンダーグラウンド・コミックスは、あらゆる事物に対する実験、ドラッグによる精神の変容、性的タブーの拒絶、既成の権威の嘲笑など、1960年代のカウンターカルチャーにおける関心事を反映していた。', FALSE, 0)"
+Syntax error in SQL statement "INSERT INTO CATEGORY (CATEGORY_ID, CATEGORY_NAME, DISCRIPTION, IS_PARENT, PARENT_ID) VALUES(アンダーグラウンド[*]・コミックス, '2アンダーグラウンド・コミックスは、あらゆる事物に対する実験、ドラッグによる精神の変容、性的タブーの拒絶、既成の権威の嘲笑など、1960年代のカウンターカルチャーにおける関心事を反映していた。', FALSE, 0)"; SQL statement:
+insert into category (category_id, category_name, discription, is_parent, parent_id) values(アンダーグラウンド・コミックス, '2アンダーグラウンド・コミックスは、あらゆる事物に対する実験、ドラッグによる精神の変容、性的タブーの拒絶、既成の権威の嘲笑など、1960年代のカウンターカルチャーにおける関心事を反映していた。', false, 0) [42000-200]
+2021-07-12 15:47:19 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列番号が一致しません
+Column count does not match; SQL statement:
+insert into category (category_id, category_name, discription, is_parent, parent_id) values(2, 'アンダーグラウンド・コミックスアンダーグラウンド・コミックスは、あらゆる事物に対する実験、ドラッグによる精神の変容、性的タブーの拒絶、既成の権威の嘲笑など、1960年代のカウンターカルチャーにおける関心事を反映していた。', false, 0) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(4, 'ドラえもん ',45, 'ドラえもん',,[*]3)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(4, 'ドラえもん ',45, 'ドラえもん',,[*]3)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(4, 'ドラえもん ',45, 'ドラえもん',,3) [42001-200]
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(5, '鋼の錬金術師 ',27, 'ちび',,[*]23)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(5, '鋼の錬金術師 ',27, 'ちび',,[*]23)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(5, '鋼の錬金術師 ',27, 'ちび',,23) [42001-200]
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(6, 'ジョジョの奇妙な冒険',105, '3部がおすすめ',,[*]23)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(6, 'ジョジョの奇妙な冒険',105, '3部がおすすめ',,[*]23)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(6, 'ジョジョの奇妙な冒険',105, '3部がおすすめ',,23) [42001-200]
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(7, '名探偵コナン',99, '青山剛掌',,[*]23)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(7, '名探偵コナン',99, '青山剛掌',,[*]23)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(7, '名探偵コナン',99, '青山剛掌',,23) [42001-200]
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(8, 'ブラック・ジャック',25, '手塚治虫',,[*]2)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(8, 'ブラック・ジャック',25, '手塚治虫',,[*]2)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(8, 'ブラック・ジャック',25, '手塚治虫',,2) [42001-200]
+2021-07-12 16:32:50 jdbc[164]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(9, '宇宙兄弟',39, '月にいます',,[*]10)"; 期待されるステートメント "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "INSERT INTO MNG_ANM (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) VALUES(9, '宇宙兄弟',39, '月にいます',,[*]10)"; expected "DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+insert into mng_anm (MNG_ANM_ID , TITLE , VALUE , RECOMMEND , IS_FINISHED , CATEGORY_ID ) values(9, '宇宙兄弟',39, '月にいます',,10) [42001-200]
+2021-07-14 16:02:06 jdbc[385]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "MNG_AMN" が見つかりません
+Table "MNG_AMN" not found; SQL statement:
+select * from mng_amn [42102-200]
+2021-07-14 16:06:10 jdbc[385]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "FORM" が見つかりません
+Table "FORM" not found; SQL statement:
+delete form category where category_id = 1 [42102-200]
+2021-07-14 16:10:09 jdbc[385]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "DELETE FROM CATEGORY CATEGORY_ID =[*] 2"
+Syntax error in SQL statement "DELETE FROM CATEGORY CATEGORY_ID =[*] 2"; SQL statement:
+delete from category category_id = 2 [42000-200]
+2021-07-14 16:10:20 jdbc[385]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "DELETE FROM CATEGORY CATEGORY WHERE_ID[*] = 2"
+Syntax error in SQL statement "DELETE FROM CATEGORY CATEGORY WHERE_ID[*] = 2"; SQL statement:
+delete from category category where_id = 2 [42000-200]
+2021-07-15 10:18:03 jdbc[76]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "CATEGRIES" が見つかりません
+Table "CATEGRIES" not found; SQL statement:
+select * from categries [42102-200]
+2021-07-15 10:18:09 jdbc[76]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "CATEGRY" が見つかりません
+Table "CATEGRY" not found; SQL statement:
+select * from categry [42102-200]
+2021-07-20 09:23:46 jdbc[5]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2021-07-23 11:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "CATEHORY" が見つかりません
+Table "CATEHORY" not found; SQL statement:
+select * from catehory [42102-200]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja" xmlns="http://www.thymeleaf.org">
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+</head>
+<body>
+	<h1 th:text="#{content.title}">Hello!</h1>
+	<pre th:text="${msg}">this is sample web page</pre>
+
+	<hr/>
+
+
+<!-- Step2 -->
+	<form method="post" action="/send">
+		<input type="checkbox" id="check1" name="check1" />
+		<label for="check1" th:text="#{content.check1}"></label>
+		<hr/>
+		<input type="radio" id="radioA" name="male" />
+		<label for="radioA" th:text="#{content.mail}"></label>
+		<input type="radio" id="radioB" name="female" />
+		<label for="radioB" th:text="#{content.femail}"></label>
+		<hr/>
+		<select th:if="${isOne}" id="select1" name="select1" size="4" multiple>
+			<option value="Windows"  th:text="#{content.select1.win}"></option>
+			<option value="Mac" th:text="#{content.select1.mac}"></option>
+			<option value="Linux" th:text="#{content.select1.lin}"></option>
+		</select>
+		<hr/>
+		<select th:unless="${isOne}" id="select2" name="select2" size="4">
+			<option value="Android" th:text="#{content.select2.win}"></option>
+			<option value="iPhone"  th:text="#{content.select2.mac}"></option>
+			<option value="winfone"  th:text="#{content.select2.lin}"></option>
+		</select>
+		<br/>
+		<input type="text" name="text1" th:value="${value}" /><br/>
+		<input type="submit" value="Click" /></br/>
+	</form>
+
+
+</body>
+</html>

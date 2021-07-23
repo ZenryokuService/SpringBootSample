@@ -1,0 +1,124 @@
+2021-07-15 15:29:31 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列番号が一致しません
+Column count does not match; SQL statement:
+insert into category (category_name, discription, is_parent, parent_id) values(25, 'テスト', 'テストの説明', false, 3) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-15 15:29:40 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "CATEGORIY_ID" が見つかりません
+Column "CATEGORIY_ID" not found; SQL statement:
+insert into category (categoriy_id, category_name, discription, is_parent, parent_id) values(25, 'テスト', 'テストの説明', false, 3) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-07-15 17:39:04 jdbc[87]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2021-07-15 17:39:04 jdbc[87]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2021-07-15 17:55:19 jdbc[149]: null
+org.h2.message.DbException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: アプリケーションにより閉じられていない接続がガベージコレクトされました
+The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more

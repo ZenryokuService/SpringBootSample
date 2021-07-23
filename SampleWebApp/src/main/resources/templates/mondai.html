@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript定期試験</title>
+        <style>
+            .btn {
+                color: #fff;
+                background-color: #eb6100;
+                border-radius: 100vh;
+                padding:10px 20px;
+                text-decoration: none;
+                margin-right: 20px;
+            }
+            #div_b{
+                margin-top: 50px;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            #div_t{
+                text-align: center;
+            }
+            .item{
+                border-radius: 5vh;
+                border:2px solid cornflowerblue;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            table{
+                border: midnightblue 2px solid;
+                border-collapse: collapse;
+                margin-left:auto;margin-right:auto;
+            }
+            th{
+                background-color: rgb(141, 245, 210);
+                border: midnightblue 1px solid;
+                padding: 5px;
+                text-align: center;
+            }
+            td{
+                border: midnightblue 1px solid;
+                padding: 5px 10px;
+                text-align: center;
+            }
+        </style>
+        <!-- thymeleaf -->
+        <script type="text/javascript" th:src="@{/mondai.js}"></script>
+    </head>
+    <body>
+        <h1>お買い物</h1>
+        <form id="container" action="">
+            <div class="item">
+                <h3>くだもの 300円</h3>
+                <label><input type="checkbox" name="fruit" value="りんご">りんご</label>
+                <label><input type="checkbox" name="fruit" value="ぶどう">ぶどう</label>
+                <label><input type="checkbox" name="fruit" value="みかん">みかん</label>
+                <label><input type="checkbox" name="fruit" value="もも">もも</label>
+                <label><input type="checkbox" name="fruit" value="いちご">いちご</label>
+            </div>
+            <div class="item">
+                <h3>パン 120円</h3>
+                <label><input type="checkbox" name="bread" value="食パン">食パン</label>
+                <label><input type="checkbox" name="bread" value="メロンパン">メロンパン</label>
+                <label><input type="checkbox" name="bread" value="フランスパン">フランスパン</label>
+                <label><input type="checkbox" name="bread" value="クロワッサン">クロワッサン</label>
+                <label><input type="checkbox" name="bread" value="あんパン">あんパン</label>
+            </div>
+            <div class="item">
+                <h3>ジュース  100円</h3>
+                <label><input type="checkbox" name="juice" value="コーラ">コーラ</label>
+                <label><input type="checkbox" name="juice" value="スプライト">スプライト</label>
+                <label><input type="checkbox" name="juice" value="ファンタ">ファンタ</label>
+                <label><input type="checkbox" name="juice" value="メロンソーダ">メロンソーダ</label>
+                <label><input type="checkbox" name="juice" value="ナポリン">ナポリン</label>
+            </div>
+            <div id="div_b">
+                <a href="#" onclick="start()" class="btn" >お買い上げ</a>
+                <input type="reset" value="リセット">
+            </div>
+        </form>
+        <hr>
+            <h2>お買い上げリスト</h2>
+            <div id="div_t">
+
+            </div>
+    </body>
+</html>
