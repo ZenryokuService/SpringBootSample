@@ -6,11 +6,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tkm.sample.data.Categories;
@@ -18,7 +20,7 @@ import com.tkm.sample.data.IndexDto;
 import com.tkm.sample.data.MngAnmData;
 import com.tkm.sample.service.CrudService;
 
-@RestController
+@Controller
 public class BooksController {
 	@Autowired
 	private CrudService service;
@@ -75,5 +77,13 @@ public class BooksController {
 		service.updateMngAnm(data);
 
 		return ResponseEntity.ok(data.getTitle());
+	}
+
+	@RequestMapping(value="/replace/update", method=RequestMethod.GET)
+	public String replaceUpdate(@RequestParam("id") int id, ModelAndView mav) {
+		MngAnmData data = service.findMngAnm(String.valueOf(id));
+		service.updateMngAnm(data);
+		mav.addObject("mng", data);
+		return "fragment";
 	}
 }

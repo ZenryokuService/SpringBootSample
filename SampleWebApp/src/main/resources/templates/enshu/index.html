@@ -1,4 +1,4 @@
-　<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head lang="ja" xmlns:th="http://www.thymeleaf.org" >
 	<meta charset="UTF-8">
@@ -11,19 +11,21 @@
 	<script type="text/javascript" th:src="@{/js/index.js}"></script>
 </head>
 <body>
-	<h1>お気に入りの、漫画アニメ</h1>
-	<p th:text="#{content.title}">登録済みの本を検索できます。</p>
+	<input id="selectValueA" type="hidden" th:value="#{content.mngAnm.isFinished}" />
+	<input id="selectValueB" type="hidden" th:value="#{content.mngAnm.isUnless}" />
+	<h1 th:text="#{content.title}">お気に入りの、漫画アニメ</h1>
+	<p th:text="#{content.discript}">登録済みの本を検索できます。</p>
 	<details>
 		<summary th:text="#{content.message}">詳細。</summary>
 		<form id="insertForm" action="/addData" method="get">
-			<input type="text" name="title" placeholder="漫画アニメのタイトル" />
-			<input type="number" name="value" placeholder="発行巻数" />
-			<input type="text" name="recommend" placeholder="おしの理由" />
+			<input type="text" name="title" th:placeholder="#{content.mngAnm.id}" />
+			<input type="number" name="value" th:placeholder="#{content.mngAnm.value}" />
+			<input type="text" name="recommend" th:placeholder="#{content.mngAnm.recommend}" />
 			<select name="isFinished">
 				<option  th:text="#{content.mngAnm.isFinished}" value="true"></option>
 				<option  th:text="#{content.mngAnm.isUnless}" value="false"></option>
 			</select>
-			<input type="number" name="janle" placeholder="ジャンル：リストより番号を入力ください" />
+			<input type="number" name="janle" th:placeholder="#{content.input.placeholder.janle}" />
 			<input id="insertBtn" type="button" th:onclick="insertData();" th:attr="value=#{content.btn.submit}"/>
 		</form>
 	</details>
@@ -34,9 +36,9 @@
 				<p th:text="#{content.categoryTitle}">カテゴリ一覧。</p>
 				<table>
 					<tr>
-						<th th:txt="#{content.categoryId}">ID</th>
-						<th th:txt="#{content.categoryName}">名</th>
-						<th th:txt="#{content.isParent}">親カテゴリ</th>
+						<th th:text="#{content.categoryId}">ID</th>
+						<th th:text="#{content.categoryName}">名</th>
+						<th th:text="#{content.isParent}">親カテゴリ</th>
 					</tr>
 					<tr th:each="obj:${categories}">
 						<td th:text="${obj.categoryId}"></td>
@@ -60,25 +62,27 @@
 								<th scope="col" th:text="#{content.mngAnm.janle}">ジャンル</th>
 							</tr>
 						</thead>
-						<tr th:each="mng, stat: *{mngAnmList}">
+						<tr th:each="mng, stat: *{mngAnmList}" th:id="'row' + ${mng.getMngAnmId()}">
 							<td scope="row" >
 								<input type="checkbox" name="check"
 									th:field="*{checkList[__${stat.index}__]}"
-									th:id="${mng.getMngAnmId()}" />
+									 />
+								<input th:id="'btn' + ${mng.getMngAnmId()}" type="button" th:onclick="'changeInputDom(' + ${mng.getMngAnmId()} + ');'" th:attr="value=#{content.btn.update}" />
 							</td>
 							<td th:text="${mng.getMngAnmId()}" th:field="${mng.getMngAnmId()}"></td>
-							<td th:text="${mng.getTitle()}"></td>
-							<td th:text="${mng.getValue()}"></td>
-							<td th:text="${mng.getRecommend()}"></td>
-							<td th:if="${mng.getIsFinished()}">完結</td>
-							<td th:unless="${mng.getIsFinished()}">継続中</td>
-							<td th:text="${mng.getCateg().getCategoryName()}"></td>
+							<td name="title" th:text="${mng.getTitle()}"></td>
+							<td name="value" th:text="${mng.getValue()}"></td>
+							<td name="recommend" th:text="${mng.getRecommend()}"></td>
+							<td name="finish" th:if="${mng.getIsFinished()}">完結</td>
+							<td name="serialize" th:unless="${mng.getIsFinished()}">継続中</td>
+							<td name="category" th:text="${mng.getCateg().getCategoryName()}"></td>
 							<td style="display:none;" >
 								<input type="hidden" th:field="*{mngAnmList[__${stat.index}__].mngAnmId}" />
 							</td>
 						</tr>
 					</table>
 					<input type="submit" th:attr="value=#{content.btn.delete}" />
+
 				</form>
 			</div>
 

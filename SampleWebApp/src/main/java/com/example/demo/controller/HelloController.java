@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,16 +10,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.data.MyData;
+import com.example.demo.repository.MyDataRepository;
+
 @RestController
 public class HelloController {
+	@Autowired
+	private MyDataRepository repository;
 
 	@RequestMapping("/")
-	@ResponseBody
 	public ModelAndView index(ModelAndView mav) {
-		mav.addObject("msg", "こんいいいい");
-		mav.setViewName("index");
+		mav.setViewName("book");
+		mav.addObject("key", 12);
 		return mav;
 	}
+
+//	@RequestMapping("/")
+//	@ResponseBody
+//	public ModelAndView index(ModelAndView mav) {
+//		mav.addObject("msg", "Hello World");
+//		mav.setViewName("index");
+//		return mav;
+//	}
 
 	@RequestMapping("/mondai")
 	@ResponseBody
@@ -43,6 +56,9 @@ public class HelloController {
 		mav.addObject("msg", "こんにちは");
 		mav.addObject("isOne", num == 1);
 
+		// リポジトリを使用する
+		Iterable<MyData> list = repository.findAll();
+		mav.addObject("data", list);
 		return mav;
 	}
 

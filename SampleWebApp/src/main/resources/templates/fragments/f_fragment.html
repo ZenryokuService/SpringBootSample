@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtm"
+		lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<tr th:fragment="entry-row" th:id="'row' + ${mng.getMngAnmId()}">
+		<td scope="row" >
+			<input type="checkbox" name="check"
+				th:field="*{checkList[__${stat.index}__]}"
+				th:id="${mng.getMngAnmId()}" />
+			<input type="button" th:onclick="'changeInputDom(' + ${mng.getMngAnmId()} + ');'" th:attr="value=#{content.btn.update}" />
+		</td>
+		<td th:text="${mng.getMngAnmId()}" th:field="${mng.getMngAnmId()}"></td>
+		<td name="title" th:text="${mng.getTitle()}"></td>
+		<td name="value" th:text="${mng.getValue()}"></td>
+		<td name="recommend" th:text="${mng.getRecommend()}"></td>
+		<td name="finish" th:if="${mng.getIsFinished()}">完結</td>
+		<td name="serialize" th:unless="${mng.getIsFinished()}">継続中</td>
+		<td name="category" th:text="${mng.getCateg().getCategoryName()}"></td>
+		<td style="display:none;" >
+			<input type="hidden" th:field="*{mngAnmList[__${stat.index}__].mngAnmId}" />
+		</td>
+	</tr>
+</body>
+</html>

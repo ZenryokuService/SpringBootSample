@@ -19,12 +19,11 @@ body {
 <body>
 	<h1 >課題1</h1>
 	<p th:text="${title}">タイトル</p>
-	<form method="post" action="/kadai1/calc">
-
-		<label>値1<input type="text" name="value1" th:value="${value1}" /></label><br>
-		<label>値2<input type="text" name="value2" th:value="${value2}" /></label><br>
-		<input type="submit" value="計算" />
+	<form method="post" >
+		<label><input type="text" name="value1" th:value="${value1}" />値1</label><br>
+		<label><input type="text" name="value2" th:value="${value2}" />値2</label><br>
+		<label><input type="submit" value="計算"></label>
 	</form>
-	<p>計算結果:<span th:text="${result}"></span></p>
+	<p th:text="${result}">計算結果</p>
 </body>
 </html>

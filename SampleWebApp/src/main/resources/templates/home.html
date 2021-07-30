@@ -3,6 +3,9 @@
 <head lang="ja" xmlns="http://www.thymeleaf.org">
 	<meta charset="UTF-8">
 	<title>Home Page</title>
+	<style type="text/css">
+		pre { border: solid 3px #ddd; padding: 10px;}
+	</style>
 </head>
 <body>
 	<h1 th:text="#{content.title}">Hello!</h1>
@@ -37,6 +40,9 @@
 		<input type="submit" value="Click" /></br/>
 	</form>
 
+<!-- Step3 -->
+	<hr/>
+	<pre th:text="${data}"></pre>
 
 </body>
 </html>
